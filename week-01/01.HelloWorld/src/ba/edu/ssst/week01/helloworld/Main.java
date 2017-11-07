@@ -15,6 +15,6 @@ public class Main {
         // System class in JAVA is used for interacting with operating system that code is executed on.
         // In this specific case, we are telling command line interface (System.out) to print out string that
         // is sent to method.
-        System.out.println("Hello, world!");
+        System.out.println("Hello, world! + 1234");
     }
 }
