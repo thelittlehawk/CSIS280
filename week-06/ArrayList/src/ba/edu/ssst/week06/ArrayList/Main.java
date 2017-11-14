@@ -70,5 +70,21 @@ public class Main {
         } else {
             System.out.println("I daon't want to...");
         }
+
+        // Sub
+        if (matrixA.length == matrixB.length && matrixA[0].length == matrixB[0].length) {
+            int[][] matrixSum = new int[matrixB.length][matrixA[0].length];
+
+            for(int row = 0 ; row < matrixA.length ; row++) {
+                for(int col = 0 ; col < matrixB[row].length ; col++) {
+                    matrixSum[row][col] = matrixA[row][col] - matrixB[row][col];
+                }
+            }
+
+            System.out.println("Sub A - B");
+            printMatrix(matrixSum);
+        } else {
+            System.out.println("I daon't want to...");
+        }
     }
 }
