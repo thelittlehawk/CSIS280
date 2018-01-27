@@ -1,6 +1,7 @@
 package ba.edu.ssst.Student;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 
 import static spark.Spark.*;
 
@@ -9,14 +10,28 @@ public class App
     public static void main( String[] args )
     {
         get("/:value", (request, response) -> {
-            ObjectMapper objectMapper = new ObjectMapper();
-            String val = request.params(":value");
+            Inventory<Pet> inevnetory = new Inventory<>();
+            inevnetory.Add(new Pet("A", "B", "red", 10));
+            inevnetory.Add(new Pet("A", "B", "red", 10));
+            inevnetory.Add(new Pet("A", "B", "red", 10));
+            inevnetory.Add(new Pet("A", "B", "red", 10));
+            inevnetory.Add(new Pet("A", "B", "red", 10));
+            inevnetory.Add(new Pet("A", "B", "red", 10));
 
-            Student student = new Student("First name", val);
+            User u
+
+            getName
+
+                    getLast
+
+            ObjectMapper objectMapper = new ObjectMapper();
+
+            SimpleModule simpleModule = new SimpleModule();
+            simpleModule.addSerializer(Inventory.class, new InventorySerializer());
 
             response.type("application/json");
 
-            return objectMapper.writeValueAsString(student);
+            return objectMapper.writeValueAsString(inevnetory);
         });
     }
 }
